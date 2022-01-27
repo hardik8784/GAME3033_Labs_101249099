@@ -77,6 +77,26 @@ public class MovementComponent : MonoBehaviour
         Playeranimator.SetBool(IsJumpingHash, playerController.isJumping);
     }
 
+    public void OnAim(InputValue value)
+    {
+
+    }
+
+    public void OnLook(InputValue value)
+    {
+
+    }
+
+    public void OnLoad(InputValue value)
+    {
+
+    }
+
+    public void OnFire(InputValue value)
+    {
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Ground") && !playerController.isJumping) return;
