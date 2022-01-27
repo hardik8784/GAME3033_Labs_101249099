@@ -15910,6 +15910,7 @@ MonoBehaviour:
   isReloading: 0
   isJumping: 0
   isRunning: 0
+  isAiming: 0
 --- !u!114 &919132149538147131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15925,6 +15926,10 @@ MonoBehaviour:
   WalkSpeed: 5
   RunSpeed: 10
   JumpForce: 5
+  FollowTransform: {fileID: 663158518}
+  AimSensitivity: 0.08
+  cameraMin: -70
+  cameraMax: 70
 --- !u!54 &919132149538147132
 Rigidbody:
   m_ObjectHideFlags: 0
