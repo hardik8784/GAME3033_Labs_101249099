@@ -128,12 +128,12 @@ public class MovementComponent : MonoBehaviour
         //If we Aim Up,Down,Adjust animations to have a mask that will let us properly animate aim
     }
 
-    public void OnReLoad(InputValue value)
+    public void OnReload(InputValue value)
     {
         playerController.isReloading = value.isPressed;
 
         //Setup Reload Animation
-        Playeranimator.SetBool(IsReloadingHash, playerController.isReloading);
+        Playeranimator.SetBool(IsReloadingHash,playerController.isReloading);
     }
 
     public void OnFire(InputValue value)
