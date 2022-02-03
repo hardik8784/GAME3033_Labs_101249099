@@ -37,9 +37,17 @@ public class WeaponComponent : MonoBehaviour
 {
     public Transform gripLocation;
     public WeaponStats weaponStats;
+    protected WeaponHolder weaponHolder;
 
-    bool isFiring;
-    bool isReloading;
+    public bool isFiring;
+    public bool isReloading;
+
+    protected Camera mainCamera;
+
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +58,11 @@ public class WeaponComponent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Initialize(WeaponHolder _weaponHolder)
+    {
+        weaponHolder = _weaponHolder;
     }
 
     public virtual void StartFiringWeapon()

@@ -9,7 +9,7 @@ public class WeaponHolder : MonoBehaviour
     GameObject WeaponToSpawn;
 
     //Components
-    PlayerController playerController;
+    public PlayerController playerController;
   
     Animator Playeranimator;
 
@@ -35,6 +35,7 @@ public class WeaponHolder : MonoBehaviour
         GameObject SpawnedWeapon = Instantiate(WeaponToSpawn, WeaponSocketLocation.transform.position, WeaponSocketLocation.transform.rotation,WeaponSocketLocation.transform);
         
         equippedWeapon = SpawnedWeapon.GetComponent<WeaponComponent>();
+        equippedWeapon.Initialize(this);
         gripIKSocketLocation = equippedWeapon.gripLocation;
     }
 
@@ -56,14 +57,7 @@ public class WeaponHolder : MonoBehaviour
        
     }
 
-    public void OnReload(InputValue value)
-    {
-        playerController.isReloading = value.isPressed;
-
-        //Setup Reload Animation
-        Playeranimator.SetBool(IsReloadingHash, playerController.isReloading);
-        Playeranimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
-    }
+   
 
     public void OnFire(InputValue value)
     {
@@ -95,5 +89,19 @@ public class WeaponHolder : MonoBehaviour
         Playeranimator.SetBool(IsFiringHash, false);
         playerController.isFiring = false;
         equippedWeapon.StopFiringWeapon();
+    }
+
+    public void OnReload(InputValue value)
+    {
+        playerController.isReloading = value.isPressed;
+
+        //Setup Reload Animation
+        Playeranimator.SetBool(IsReloadingHash, playerController.isReloading);
+        Playeranimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
+    }
+
+    public void StartReloading()
+    {
+
     }
 }
