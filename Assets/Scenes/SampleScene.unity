@@ -15975,6 +15975,7 @@ MonoBehaviour:
   WeaponToSpawn: {fileID: 5372242115477984015, guid: 0e72e3849bd2ec04bb2dce0eaf462a47, type: 3}
   CrossHairImage: {fileID: 0}
   WeaponSocketLocation: {fileID: 1079768952}
+  gripIKSocketLocation: {fileID: 0}
 --- !u!4 &954176531251843052
 Transform:
   m_ObjectHideFlags: 0
