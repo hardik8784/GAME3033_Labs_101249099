@@ -75,8 +75,11 @@ public class WeaponHolder : MonoBehaviour
 
     void StartFiring()
     {
-        if (equippedWeapon.weaponStats.bulletsInClip <= 0) return;
-
+        if (equippedWeapon.weaponStats.bulletsInClip <= 0)
+        {
+            StartReloading();
+            return;
+        }
         //Set up Firing Animation
         Playeranimator.SetBool(IsFiringHash, true);
         playerController.isFiring = true;
@@ -131,5 +134,10 @@ public class WeaponHolder : MonoBehaviour
         Playeranimator.SetBool(IsReloadingHash, false/*playerController.isReloading*/);
         equippedWeapon.StopReloading();
         CancelInvoke(nameof(StopReloading));
+
+        if(firingPressed)
+        {
+            StartFiring();
+        }
     }
 }
