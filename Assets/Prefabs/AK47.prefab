@@ -60,6 +60,9 @@ MonoBehaviour:
     weaponHitLayers:
       serializedVersion: 2
       m_Bits: 4294967295
+    totalBullets: 500
+  isFiring: 0
+  isReloading: 0
 --- !u!1 &8976177657313800024
 GameObject:
   m_ObjectHideFlags: 0

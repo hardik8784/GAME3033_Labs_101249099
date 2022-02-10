@@ -93,15 +93,43 @@ public class WeaponHolder : MonoBehaviour
 
     public void OnReload(InputValue value)
     {
-        playerController.isReloading = value.isPressed;
 
-        //Setup Reload Animation
-        Playeranimator.SetBool(IsReloadingHash, playerController.isReloading);
-        Playeranimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
+
+        playerController.isReloading = value.isPressed;
+        StartReloading();
+
+
     }
 
     public void StartReloading()
     {
+        if (playerController.isFiring)
+        {
+            StopFiring();
+        }
+        if (equippedWeapon.weaponStats.totalBullets <= 0)
+        {
+            return;
+        }
 
+        //Refill the Ammo
+        equippedWeapon.StartReloading();
+
+        //Setup Reload Animation
+        Playeranimator.SetBool(IsReloadingHash, true/*playerController.isReloading*/);
+        //Playeranimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
+
+        InvokeRepeating(nameof(StopReloading), 0, 0.1f);
+    }
+
+    public void StopReloading()
+    {
+        if (Playeranimator.GetBool(IsReloadingHash)) return;
+
+        playerController.isReloading = false;
+        //Setup Reload Animation
+        Playeranimator.SetBool(IsReloadingHash, false/*playerController.isReloading*/);
+        equippedWeapon.StopReloading();
+        CancelInvoke(nameof(StopReloading));
     }
 }
