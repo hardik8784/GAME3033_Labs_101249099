@@ -75,6 +75,7 @@ public class WeaponComponent : MonoBehaviour
         if(weaponStats.repeating)
         {
             //Fire Weapon
+            CancelInvoke(nameof(FireWeapon));
             InvokeRepeating(nameof(FireWeapon), weaponStats.fireStartDelay, weaponStats.fireRate);
         }
         else
@@ -124,6 +125,7 @@ public class WeaponComponent : MonoBehaviour
 
         if(bulletsToReload < 0)
         {
+            //weaponStats.totalBullets -= (weaponStats.clipSize - weaponStats.bulletsInClip) /*weaponStats.clipSize*/;
             weaponStats.bulletsInClip = weaponStats.clipSize;
             weaponStats.totalBullets -= weaponStats.clipSize;
         }
