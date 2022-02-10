@@ -125,7 +125,7 @@ public class WeaponComponent : MonoBehaviour
 
         if(bulletsToReload < 0)
         {
-            //weaponStats.totalBullets -= (weaponStats.clipSize - weaponStats.bulletsInClip) /*weaponStats.clipSize*/;
+            //weaponStats.totalBullets -= (weaponStats.clipSize - weaponStats.bulletsInClip) ;
             weaponStats.bulletsInClip = weaponStats.clipSize;
             weaponStats.totalBullets -= weaponStats.clipSize;
         }
