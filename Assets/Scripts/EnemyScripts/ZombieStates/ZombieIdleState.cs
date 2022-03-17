@@ -8,6 +8,7 @@ public class ZombieIdleState : ZombieStates
 
     public ZombieIdleState(ZombieComponent zombie, ZombieStateMachine stateMachine) : base(zombie, stateMachine)
     {
+        updateInterval = 0;
     }
 
     public override void Start()

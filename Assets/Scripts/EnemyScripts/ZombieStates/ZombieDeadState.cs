@@ -8,6 +8,7 @@ public class ZombieDeadState : ZombieStates
     int isDeadHash = Animator.StringToHash("isDead");
     public ZombieDeadState(ZombieComponent zombie, ZombieStateMachine stateMachine) : base(zombie, stateMachine)
     {
+        updateInterval = 0;
     }
 
     public override void Start()

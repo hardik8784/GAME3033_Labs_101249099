@@ -6,12 +6,12 @@ public class ZombieStateMachine : MonoBehaviour
 {
 
     public State currentState { get; private set; }
-    protected Dictionary<ZombieStateType, State> states;
+    protected Dictionary<ZombieStateType, State> states = new Dictionary<ZombieStateType, State>();
     bool isRunning;
 
     private void Awake()
     {
-        states = new Dictionary<ZombieStateType, State>();
+        //states = new Dictionary<ZombieStateType, State>();
     }
 
     public void Initialize(ZombieStateType startingState)
