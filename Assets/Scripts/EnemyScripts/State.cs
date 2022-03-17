@@ -6,7 +6,7 @@ public class State
 {
     protected ZombieStateMachine stateMachine;
 
-    public float updateInterval { get; private set; } = 1f;
+    public float updateInterval { get; protected set; } = 1f;
     
     protected State(ZombieStateMachine _stateMachine)
     {
