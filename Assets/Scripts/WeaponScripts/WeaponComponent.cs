@@ -98,7 +98,7 @@ public class WeaponComponent : MonoBehaviour
     {
         print("Firing Weapon");
         weaponStats.bulletsInClip--;
-        print("BulletsInClip: " +weaponStats.bulletsInClip);
+       // print("BulletsInClip: " +weaponStats.bulletsInClip);
     }
 
     public virtual void StartReloading()
