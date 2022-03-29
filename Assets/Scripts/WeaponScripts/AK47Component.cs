@@ -41,7 +41,7 @@ public class AK47Component : WeaponComponent
        //Debug.Log("Damageable " + damageable);
         damageable?.TakeDamge(weaponStats.damage);
         //Debug.Log(weaponStats.damage);
-        Debug.Log(hitInfo.collider.gameObject.name);
+        //Debug.Log(hitInfo.collider.gameObject.name);
     }
 
     private void OnDrawGizmos()
