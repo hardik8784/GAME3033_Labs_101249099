@@ -13,7 +13,7 @@ public class ZombieSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //followGameObject = GameObject.FindGameObjectWithTag("Player");
+        followGameObject = GameObject.FindGameObjectWithTag("Player");
 
         for(int i=0;i<numberOfZombieToSpawn;i++)
         {
@@ -30,7 +30,7 @@ public class ZombieSpawner : MonoBehaviour
 
         GameObject zombie = Instantiate(zombieToSpawn, spawnerVolume.GetPositionInBounds(), spawnerVolume.transform.rotation);
 
-        //zombie.GetComponent<ZombieComponent>().Initialize(followGameObject);
+        zombie.GetComponent<ZombieComponent>().Initialize(followGameObject);
     }
 
     // Update is called once per frame
