@@ -7,12 +7,17 @@ public class SpawnerVolume : MonoBehaviour
     [SerializeField]
     BoxCollider boxCollider;
 
-    // Start is called before the first frame update
-    void Start()
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    boxCollider = GetComponent<BoxCollider>();
+    //}
+
+
+    private void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
     }
-
     public Vector3 GetPositionInBounds()
     {
         Bounds boxBounds = boxCollider.bounds;
